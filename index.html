@@ -71,10 +71,13 @@
 
       /* 프로필 이미지 동그랗게 만들기 */
       #pf-img img {
-        width: 100%;
-        border-radius: 50%;
-        margin-bottom: 20px;
-      }
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
 
       /* 각 섹션(소개, 프로젝트 등) 디자인 */
       section {
