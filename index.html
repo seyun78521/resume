@@ -1,111 +1,227 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Seyun Chong(정세윤)의 이력서</title>
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  
-  <style>
-    /* 화면의 기본 여백을 없애고 폰트와 배경색을 지정합니다 */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Malgun Gothic', sans-serif; background-color: #f0f2f5; padding: 20px; }
-    
-    /* 이력서 전체를 감싸는 하얀색 종이 같은 박스를 만듭니다 */
-    #container { max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-    
-    /* 헤더(이름/직업) 디자인 */
-    header { text-align: center; border-bottom: 2px solid #333; padding-bottom: 20px; margin-bottom: 30px; }
-    h1 { font-size: 2.5em; color: #222; }
-    h2 { font-size: 1.2em; color: #666; margin-top: 5px; font-weight: normal; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seyun Chong(정세윤)의 이력서</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      /* 화면의 기본 여백을 없애고 폰트와 배경색을 지정합니다 */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-    /* 메인 영역을 좌/우 2개의 단으로 나눕니다 (Flexbox 사용) */
-    main { display: flex; gap: 40px; }
-    #left { width: 35%; border-right: 1px solid #eee; padding-right: 20px; }
-    #right { width: 65%; }
+      body {
+        font-family: 'Malgun Gothic', sans-serif;
+        background-color: #f0f2f5;
+        padding: 20px;
+      }
 
-    /* 프로필 이미지 동그랗게 만들기 */
-    #pf-img img { width: 100%; border-radius: 50%; margin-bottom: 20px; }
+      /* 이력서 전체를 감싸는 하얀색 종이 같은 박스를 만듭니다 */
+      #container {
+        width: min(100%, 1200px);
+        margin: 0 auto;
+        background: white;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
 
-    /* 각 섹션(소개, 프로젝트 등) 디자인 */
-    section { margin-bottom: 30px; }
-    section h2 { font-size: 1.3em; color: #0056b3; border-bottom: 2px solid #e0e0e0; padding-bottom: 5px; margin-bottom: 15px; }
-    p { line-height: 1.6; color: #444; margin-bottom: 10px; }
+      /* 헤더(이름/직업) 디자인 */
+      header {
+        text-align: center;
+        border-bottom: 2px solid #333;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+      }
 
-    /* 연락처 리스트 디자인 */
-    #sns { list-style: none; }
-    #sns li { margin-bottom: 12px; font-size: 0.9em; }
-    #sns a { color: #555; text-decoration: none; margin-left: 8px; }
-    #sns a:hover { color: #0056b3; text-decoration: underline; }
+      h1 {
+        font-size: 2.5em;
+        color: #222;
+      }
 
-    /* 경력/과제(dl, dt, dd) 디자인 */
-    dl { margin-bottom: 20px; }
-    dt { font-weight: bold; color: #222; margin-bottom: 5px; }
-    dd { color: #555; font-size: 0.95em; margin-left: 15px; line-height: 1.5; }
-    dd::before { content: "- "; }
-  </style>
-</head>
-<body>
-  <div id="container">
-    
-    <header>
-      <h1>Seyun Chong(정세윤)</h1>
-      <h2>Computer Science Student & 백엔드 개발자 지망생</h2>
-    </header>
+      h2 {
+        font-size: 1.2em;
+        color: #666;
+        margin-top: 5px;
+        font-weight: normal;
+      }
 
-    <main>
-      <article id="left">
-        <div id="pf-img">
-          <img src="https://via.placeholder.com/200" alt="프로필 이미지">
-        </div>
+      /* 메인 영역을 좌/우 2개의 단으로 나눕니다 (Flexbox 사용) */
+      main {
+        display: flex;
+        gap: 40px;
+      }
 
-        <section>
-          <p>안녕하세요! Java와 C를 학습 중인 컴퓨터공학과 2학년입니다. 효율적인 백엔드 시스템을 만드는 개발자로 성장하고 싶습니다.</p>
+      #left {
+        width: 35%;
+        border-right: 1px solid #eee;
+        padding-right: 20px;
+      }
 
-          <ul id="sns">
-            <li>
-              <i class="fa fa-envelope" aria-hidden="true"></i>
-              <a href="mailto:seyun78521@gmail.com">seyun78521@gmail.com</a>              
-            </li>
-            <li>
-              <i class="fab fa-github" aria-hidden="true"></i>
-              <a href="https://github.com/seyun78521">github.com/seyun78521</a>              
-            </li>
-          </ul>
-        </section>
-      </article>
+      #right {
+        width: 65%;
+      }
 
-      <article id="right">
-        
-        <section>
-          <h2>주요 프로젝트 및 과제 (Projects)</h2>
-          <dl>
-            <dt>Java 기반 오목(Gomoku) 게임 공동 개발 (2026.5)</dt>
-            <dd><strong>Tech:</strong> Java, Git, GitHub</dd>
-            <dd><strong>핵심 알고리즘:</strong> 2차원 배열을 활용한 보드 상태 관리, 턴(흑/백) 제어 및 8방향 탐색 기반의 승패 판정 로직 구현</dd>
-            <dd><strong>룰 고도화:</strong> 다방향 탐색을 통해 33 금수(Double-Three) 예외 상황을 정확히 판별하고 차단하는 검증 알고리즘 설계</dd>
-            <dd><strong>코드 최적화:</strong> 객체지향 프로그래밍(OOP) 원칙을 적용하여 전체 코드를 리팩토링하고, 치명적인 버그를 수정하여 프로그램 안정성 확보</dd>
-            <dd><strong>협업 전략:</strong> 기능 단위 브랜치(Branch) 분리 및 Pull Request(PR)를 통한 상호 코드 리뷰와 충돌(Merge Conflict) 해결 경험</dd>
-          </dl>
-        </section>
-        
-        <section>
-          <h2>다룰 수 있는 기술 (Skills)</h2>
-          <p><strong>Languages:</strong> Java, C, Python (기초)</p>
-          <p><strong>Concepts:</strong> 자료구조, 객체지향 프로그래밍(OOP)</p>
-          <p><strong>Tools:</strong> Git, GitHub, Eclipse, VS Code</p>
-        </section>
-        
-        <section>
-          <h2>학력 (Education)</h2>
-          <p>2025.03 - 현재 : OO대학교 컴퓨터공학과 2학년 재학</p>
-          <p>2025.02 - 광영고등학교 졸업</p>
-        </section>
+      /* 프로필 이미지 동그랗게 만들기 */
+      #pf-img img {
+        width: 100%;
+        border-radius: 50%;
+        margin-bottom: 20px;
+      }
 
-      </article>
-    </main>
-  </div>
-</body>
+      /* 각 섹션(소개, 프로젝트 등) 디자인 */
+      section {
+        margin-bottom: 30px;
+      }
+
+      section h2 {
+        font-size: 1.3em;
+        color: #0056b3;
+        border-bottom: 2px solid #e0e0e0;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+      }
+
+      p {
+        line-height: 1.6;
+        color: #444;
+        margin-bottom: 10px;
+      }
+
+      /* 연락처 리스트 디자인 */
+      #sns {
+        list-style: none;
+      }
+
+      #sns li {
+        margin-bottom: 12px;
+        font-size: 0.9em;
+      }
+
+      #sns a {
+        color: #555;
+        text-decoration: none;
+        margin-left: 8px;
+      }
+
+      #sns a:hover {
+        color: #0056b3;
+        text-decoration: underline;
+      }
+
+      /* 경력/과제(dl, dt, dd) 디자인 */
+      dl {
+        margin-bottom: 20px;
+      }
+
+      dt {
+        font-weight: bold;
+        color: #222;
+        margin-bottom: 5px;
+      }
+
+      dd {
+        color: #555;
+        font-size: 0.95em;
+        margin-left: 15px;
+        line-height: 1.5;
+      }
+
+      dd::before {
+        content: "- ";
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <h1>Seyun Chong(정세윤)</h1>
+        <h2>Computer Science Student & 백엔드 개발자 지망생</h2>
+      </header>
+
+      <main>
+        <article id="left">
+          <div id="pf-img">
+            <img src="https://via.placeholder.com/200" alt="프로필 이미지" />
+          </div>
+
+          <section>
+            <p>
+              안녕하세요! Java와 C를 학습 중인 컴퓨터공학과 2학년입니다.
+              효율적인 백엔드 시스템을 만드는 개발자로 성장하고 싶습니다.
+            </p>
+
+            <ul id="sns">
+              <li>
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <a href="mailto:seyun78521@gmail.com">seyun78521@gmail.com</a>
+              </li>
+              <li>
+                <i class="fab fa-github" aria-hidden="true"></i>
+                <a href="https://github.com/seyun78521">github.com/seyun78521</a>
+              </li>
+            </ul>
+          </section>
+        </article>
+
+        <article id="right">
+          <section>
+            <h2>주요 프로젝트 및 과제 (Projects)</h2>
+            <dl>
+              <dt>Java 기반 오목(Gomoku) 게임 공동 개발 (2026.5)</dt>
+
+              <dd style="margin-bottom: 15px;">
+                <strong>Tech</strong><br />
+                · Java, Git, GitHub
+              </dd>
+
+              <dd style="margin-bottom: 15px;">
+                <strong>기능 구현</strong><br />
+                · 2차원 배열을 활용한 보드 상태 동기화<br />
+                · 턴(흑/백) 제어 로직 개발
+              </dd>
+
+              <dd style="margin-bottom: 15px;">
+                <strong>알고리즘 설계</strong><br />
+                · 8방향 탐색을 통해 5목(승패) 판정 로직 구현<br />
+                · 33 금수 예외를 차단하는 검증 로직 구현
+              </dd>
+
+              <dd style="margin-bottom: 15px;">
+                <strong>코드 개선</strong><br />
+                · 객체지향(OOP) 원칙에 따른 전체 코드 리팩토링<br />
+                · 주요 오류 수정 및 프로그램 안정성 확보
+              </dd>
+
+              <dd>
+                <strong>협업</strong><br />
+                · 기능별 Branch 분리 및 Pull Request(PR) 진행<br />
+                · 상호 코드 리뷰를 통한 Merge 충돌 해결
+              </dd>
+            </dl>
+          </section>
+
+          <section>
+            <h2>다룰 수 있는 기술 (Skills)</h2>
+            <p><strong>Languages:</strong> Java, C, Python (기초)</p>
+            <p><strong>Concepts:</strong> 자료구조, 객체지향 프로그래밍(OOP)</p>
+            <p><strong>Tools:</strong> Git, GitHub, Eclipse, VS Code</p>
+          </section>
+
+          <section>
+            <h2>학력 (Education)</h2>
+            <p>2025.03 - 현재 : 동국대학교WISE 컴퓨터공학과 2학년 재학</p>
+            <p>2025.02 - 광영고등학교 졸업</p>
+          </section>
+        </article>
+      </main>
+    </div>
+  </body>
 </html>
