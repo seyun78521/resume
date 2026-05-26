@@ -5,144 +5,160 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Seyun Chong(정세윤)의 이력서</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable.css" />
+    
     <style>
-      /* 화면의 기본 여백을 없애고 폰트와 배경색을 지정합니다 */
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
+      /*1. 컬러 변수 세팅 (다크모드 지원을 위한 실무 기술) */
+      :root {
+        --bg-body: #f8f9fa;
+        --bg-container: #ffffff;
+        --text-main: #333333;
+        --text-sub: #555555;
+        --text-light: #888888;
+        --heading-main: #111111;
+        --accent-color: #0056b3;
+        --border-line: #eaeaea;
+        --tag-bg: #f0f4f8;
+        --tag-text: #0056b3;
+        --shadow-color: rgba(0, 0, 0, 0.05);
+        --dl-hover-shadow: rgba(0, 86, 179, 0.08);
       }
 
+      /*2. 다크모드 자동 감지 및 컬러 변경 */
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg-body: #121212;
+          --bg-container: #1e1e1e;
+          --text-main: #e0e0e0;
+          --text-sub: #b0b0b0;
+          --text-light: #888888;
+          --heading-main: #ffffff;
+          --accent-color: #4da3ff; /* 다크모드에서는 파란색을 눈 안 아픈 밝은 톤으로 */
+          --border-line: #333333;
+          --tag-bg: #2c3e50;
+          --tag-text: #66b2ff;
+          --shadow-color: rgba(0, 0, 0, 0.5);
+          --dl-hover-shadow: rgba(77, 163, 255, 0.15);
+        }
+      }
+
+      /* --- 기본 초기화 --- */
+      * { box-sizing: border-box; margin: 0; padding: 0; }
       body {
-        font-family: 'Malgun Gothic', sans-serif;
-        background-color: #f0f2f5;
-        padding: 20px;
+        font-family: 'Pretendard Variable', Pretendard, -apple-system, sans-serif;
+        background-color: var(--bg-body);
+        color: var(--text-main);
+        padding: 40px 20px;
+        transition: background-color 0.3s ease, color 0.3s ease;
       }
 
-      /* 이력서 전체를 감싸는 하얀색 종이 같은 박스를 만듭니다 */
+      /* --- 메인 컨테이너 --- */
       #container {
-        width: min(100%, 1200px);
+        width: min(100%, 1100px);
         margin: 0 auto;
-        background: white;
-        padding: 40px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        background: var(--bg-container);
+        padding: 50px 60px;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px var(--shadow-color);
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
       }
 
-      /* 헤더(이름/직업) 디자인 */
+      /* --- 헤더 --- */
       header {
         text-align: center;
-        border-bottom: 2px solid #333;
-        padding-bottom: 20px;
-        margin-bottom: 30px;
+        padding-bottom: 30px;
+        margin-bottom: 40px;
+        border-bottom: 1px solid var(--border-line);
       }
+      h1 { font-size: 2.5em; font-weight: 800; color: var(--heading-main); letter-spacing: -0.5px; }
+      h2 { font-size: 1.1em; color: var(--accent-color); margin-top: 10px; font-weight: 500; }
 
-      h1 {
-        font-size: 2.5em;
-        color: #222;
-      }
+      /* --- 레이아웃 --- */
+      main { display: flex; gap: 50px; }
+      #left { width: 30%; }
+      #right { width: 70%; }
 
-      h2 {
-        font-size: 1.2em;
-        color: #666;
-        margin-top: 5px;
-        font-weight: normal;
-      }
-
-      /* 메인 영역을 좌/우 2개의 단으로 나눕니다 (Flexbox 사용) */
-      main {
-        display: flex;
-        gap: 40px;
-      }
-
-      #left {
-        width: 35%;
-        border-right: 1px solid #eee;
-        padding-right: 20px;
-      }
-
-      #right {
-        width: 65%;
-      }
-
-      /* 프로필 이미지 동그랗게 만들기 */
+      /* --- 프로필 사진 --- */
       #pf-img img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
+        width: 80%;
+        max-width: 200px;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 50%;
+        margin: 0 auto 25px auto;
+        display: block;
+        border: 4px solid var(--bg-container);
+        box-shadow: 0 4px 15px var(--shadow-color);
+        transition: transform 0.3s ease;
+      }
+      #pf-img img:hover { transform: scale(1.03); }
+
+      /* --- 좌측 자기소개 & SNS --- */
+      #left p { font-size: 0.95em; line-height: 1.7; color: var(--text-sub); text-align: center; margin-bottom: 25px; }
+      #sns { list-style: none; padding: 20px; background: var(--bg-body); border-radius: 10px; border: 1px solid var(--border-line); }
+      #sns li { margin-bottom: 15px; font-size: 0.9em; display: flex; align-items: center; }
+      #sns li:last-child { margin-bottom: 0; }
+      #sns i { width: 25px; color: var(--text-light); font-size: 1.2em; transition: color 0.3s; }
+      #sns a { color: var(--text-sub); text-decoration: none; transition: all 0.3s ease; }
       
-      border-radius: 50%;
-      margin-bottom: 20px;
-    }
+      #sns li:hover i { color: var(--accent-color); }
+      #sns li:hover a { color: var(--accent-color); font-weight: 600; transform: translateX(5px); display: inline-block; }
 
-      /* 각 섹션(소개, 프로젝트 등) 디자인 */
-      section {
-        margin-bottom: 30px;
+      /* --- 우측 섹션 공통 --- */
+      section { margin-bottom: 45px; }
+      section h2 { font-size: 1.3em; color: var(--heading-main); font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+      section h2::before { content: ""; display: inline-block; width: 4px; height: 18px; background-color: var(--accent-color); border-radius: 2px; }
+
+      /* --- 프로젝트 (dl, dt, dd) --- */
+      dl { background: var(--bg-container); padding: 25px; border-radius: 12px; border: 1px solid var(--border-line); transition: all 0.3s ease; }
+      dl:hover { border-color: var(--accent-color); box-shadow: 0 8px 25px var(--dl-hover-shadow); transform: translateY(-3px); }
+      dt { font-weight: 700; color: var(--heading-main); font-size: 1.1em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px dashed var(--border-line); }
+      dd { color: var(--text-sub); font-size: 0.95em; line-height: 1.6; }
+      dd strong { color: var(--text-main); font-weight: 600; }
+
+      /* --- 스킬 태그 --- */
+      .skill-category { margin-bottom: 15px; }
+      .skill-category span.title { display: inline-block; width: 90px; font-weight: 600; color: var(--text-main); font-size: 0.95em; }
+      .tag { display: inline-block; background: var(--tag-bg); color: var(--tag-text); padding: 5px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500; margin: 0 5px 5px 0; transition: all 0.2s ease; }
+      .tag:hover { background: var(--accent-color); color: #fff; transform: translateY(-2px); }
+
+      /* --- 학력 --- */
+      .edu-item { display: flex; gap: 20px; margin-bottom: 10px; font-size: 0.95em; color: var(--text-sub); }
+      .edu-date { color: var(--text-light); font-weight: 500; width: 140px; }
+
+      /* 3. 모바일 최적화 (화면폭이 768px 이하로 줄어들 때 발동) */
+      @media screen and (max-width: 768px) {
+        body { padding: 20px 10px; }
+        #container { padding: 30px 20px; }
+        main { flex-direction: column; gap: 40px; }
+        #left, #right { width: 100%; } /* 좌우 2단 배치를 상하 1단 배치로 변경 */
+        #pf-img img { max-width: 150px; }
+        .skill-category span.title { display: block; margin-bottom: 5px; }
+        .edu-item { flex-direction: column; gap: 5px; }
+        .edu-date { width: auto; }
       }
 
-      section h2 {
-        font-size: 1.3em;
-        color: #0056b3;
-        border-bottom: 2px solid #e0e0e0;
-        padding-bottom: 5px;
-        margin-bottom: 15px;
-      }
-
-      p {
-        line-height: 1.6;
-        color: #444;
-        margin-bottom: 10px;
-      }
-
-      /* 연락처 리스트 디자인 */
-      #sns {
-        list-style: none;
-      }
-
-      #sns li {
-        margin-bottom: 12px;
-        font-size: 0.9em;
-      }
-
-      #sns a {
-        color: #555;
-        text-decoration: none;
-        margin-left: 8px;
-      }
-
-      #sns a:hover {
-        color: #0056b3;
-        text-decoration: underline;
-      }
-
-      /* 경력/과제(dl, dt, dd) 디자인 */
-      dl {
-        margin-bottom: 20px;
-      }
-
-      dt {
-        font-weight: bold;
-        color: #222;
-        margin-bottom: 5px;
-      }
-
-      dd {
-        color: #555;
-        font-size: 0.95em;
-        margin-left: 15px;
-        line-height: 1.5;
+      /* 4. PDF/인쇄 최적화 (Ctrl+P를 눌렀을 때 발동) */
+      @media print {
+        body { background: white; padding: 0; }
+        #container { box-shadow: none; padding: 0; max-width: 100%; border-radius: 0; }
+        /* 인쇄 시 불필요한 호버 효과 및 색상 제거 (잉크 절약 및 가독성) */
+        #sns a { color: black; text-decoration: none; }
+        dl { border: 1px solid #ccc; box-shadow: none; break-inside: avoid; }
+        dl:hover { transform: none; box-shadow: none; }
+        .tag { border: 1px solid #ccc; color: black; background: white; }
+        * { color: black !important; }
+        h2, h1, dt, strong { color: black !important; }
+        section h2::before { background-color: black !important; }
       }
     </style>
   </head>
   <body>
     <div id="container">
       <header>
-        <h1>Seyun Chong(정세윤)</h1>
-        <h2>Computer Science Student & 백엔드 개발자 지망생</h2>
+        <h1>Seyun Chong</h1>
+        <h2>Computer Science Student & Backend Developer</h2>
       </header>
 
       <main>
@@ -153,8 +169,8 @@
 
           <section>
             <p>
-              안녕하세요! Java와 C를 학습 중인 컴퓨터공학과 2학년입니다.<br />
-              효율적인 백엔드 시스템을 만드는 개발자로 성장하고 싶습니다.
+              안녕하세요!<br>Java와 C를 깊이 있게 학습 중인<br>컴퓨터공학과 2학년입니다.<br>
+              논리적인 예외 처리와 객체지향 설계에 흥미를 느끼며, 안정적인 백엔드 시스템을 만드는 개발자를 목표로 하고 있습니다.
             </p>
 
             <ul id="sns">
@@ -172,28 +188,28 @@
 
         <article id="right">
           <section>
-            <h2>주요 프로젝트 및 과제 (Projects)</h2>
+            <h2>Projects</h2>
             <dl>
               <dt>Java 기반 오목(Gomoku) 게임 공동 개발 (2026.5)</dt>
 
-              <dd style="margin-bottom: 15px;">
+              <dd style="margin-bottom: 18px;">
                 <strong>Tech</strong><br />
                 · Java, Git, GitHub
               </dd>
 
-              <dd style="margin-bottom: 15px;">
+              <dd style="margin-bottom: 18px;">
                 <strong>기능 구현</strong><br />
                 · 2차원 배열을 활용한 보드 상태 동기화<br />
                 · 턴(흑/백) 제어 로직 구현
               </dd>
 
-              <dd style="margin-bottom: 15px;">
+              <dd style="margin-bottom: 18px;">
                 <strong>알고리즘 설계</strong><br />
                 · 8방향 탐색을 통해 5목(승패) 판정 로직 구현<br />
                 · 33 금수 예외를 차단하는 검증 로직 구현
               </dd>
 
-              <dd style="margin-bottom: 15px;">
+              <dd style="margin-bottom: 18px;">
                 <strong>코드 개선</strong><br />
                 · 객체지향(OOP) 원칙에 따른 전체 코드 리팩토링<br />
                 · 주요 오류 수정 및 프로그램 안정성 확보
@@ -208,16 +224,38 @@
           </section>
 
           <section>
-            <h2>다룰 수 있는 기술 (Skills)</h2>
-            <p><strong>Languages:</strong> Java, C, Python (기초)</p>
-            <p><strong>Concepts:</strong> 자료구조, 객체지향 프로그래밍(OOP)</p>
-            <p><strong>Tools:</strong> Git, GitHub, Eclipse, VS Code</p>
+            <h2>Skills</h2>
+            <div class="skill-category">
+              <span class="title">Languages</span>
+              <span class="tag">Java</span>
+              <span class="tag">C</span>
+              <span class="tag">Python</span>
+            </div>
+            <div class="skill-category">
+              <span class="title">Concepts</span>
+              <span class="tag">Data Structure</span>
+              <span class="tag">OOP</span>
+              <span class="tag">Algorithm</span>
+            </div>
+            <div class="skill-category">
+              <span class="title">Tools</span>
+              <span class="tag">Git</span>
+              <span class="tag">GitHub</span>
+              <span class="tag">Eclipse</span>
+              <span class="tag">VS Code</span>
+            </div>
           </section>
 
           <section>
-            <h2>학력 (Education)</h2>
-            <p>2025.03 - 현재 : 동국대학교WISE 컴퓨터공학과 2학년 재학</p>
-            <p>2025.02 - 광영고등학교 졸업</p>
+            <h2>Education</h2>
+            <div class="edu-item">
+              <span class="edu-date">2025.03 - 현재</span>
+              <span>동국대학교WISE 컴퓨터공학과 2학년 재학</span>
+            </div>
+            <div class="edu-item">
+              <span class="edu-date">2025.02</span>
+              <span>광영고등학교 졸업</span>
+            </div>
           </section>
         </article>
       </main>
